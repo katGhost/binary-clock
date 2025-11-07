@@ -9,4 +9,9 @@ def index():
   return render_template("index.html")
 
 
+# Function to convert time to binary
+def time_to_binary(digit):
+  print("")
+
+
 

@@ -8,11 +8,15 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #181818;
 }
-
+.main {
+  height: 100vh;
+}
 .clock {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 8px);
   background-color: #050505;
+  border: 4px solid #a5a5a5;
 }
+
