@@ -56,7 +56,7 @@ def time_endpoint():
 
 # Function to get the tuple time information
 # -> decouples the data further and store in a dict
-@app.route("binary_time")
+@app.route("/binary_time")
 def bin_time_endpoint():
   hours, minutes, seconds = get_time()
 
