@@ -1,4 +1,3 @@
-//import axios  from 'axios';
 // Grab the DOM data
 const hourDigits = document.querySelectorAll(".group.hours .digit");
 const minuteDigits = document.querySelectorAll(".group.minutes .digit");
@@ -27,19 +26,28 @@ function updateClock(data) {
   updateGroup(secondDigits, data.seconds);
 }
 
-function fetchBinaryTime() {
-  fetch('/binary_time')
-    .then(response => response.json())
-    .then( data => {
-      updateClock(data);
-    })
-    .catch(error => {
-      console.log("Error fetching data: ", error);
-    });
+// Function to fetch api data asynchronously
+const fetchBinaryTime = async () => {
+  try {
+    // fecth data
+    const response = await axios.get("/api/binary_time");
+    //console.log(response.data);
+    // map the data
+    const data = response.data;
+    updateClock(data);
+  }
+  catch (error) {
+    console.log("Error: ", error);
+  }
+    
 }
 
-setInterval(fetchBinaryTime, 1000);
-fetchBinaryTime();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchBinaryTime();
+  setInterval(fetchBinaryTime, 1000);
+});
+
+
 
 // fetch the data
 /*fetch('/time')
