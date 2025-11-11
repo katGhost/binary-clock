@@ -37,8 +37,8 @@ body {
 }
 
 .bulb.on {
-  background-color: #ffeb3b;
-  box-shadow: 0 0 8px #ffeb3b, 0 0 16px #ffeb3b;
+  background-color: rgb(45, 255, 73);
+  box-shadow: 0 0 8px #3bff55, 0 0 16px #3bff55;
 }
 
 

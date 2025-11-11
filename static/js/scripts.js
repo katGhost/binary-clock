@@ -3,6 +3,9 @@ const hourDigits = document.querySelectorAll(".group.hours .digit");
 const minuteDigits = document.querySelectorAll(".group.minutes .digit");
 const secondDigits = document.querySelectorAll(".group.seconds .digit");
 
+// let users decide on client-side time format preference (12h/24h)
+let use12HourFormat = false;  // 24h by default
+
 //console.log(hourDigits);
 //
 function updateGroup(digits, binaryArray) {
@@ -24,6 +27,14 @@ function updateClock(data) {
   updateGroup(hourDigits, data.hours);
   updateGroup(minuteDigits, data.minutes)
   updateGroup(secondDigits, data.seconds);
+
+  // change to 12h format
+  if (data.hours > 12)
+  {
+    data.hours -= 12;
+    use12HourFormat = true;
+  }
+  
 }
 
 // Function to fetch api data asynchronously

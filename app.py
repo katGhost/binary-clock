@@ -45,7 +45,10 @@ def convert_to_string(nums: tuple[int, int, int]) -> str:
 def bin_time_endpoint():
   current_time = datetime.now()
   hours = current_time.hour
-  minutes = current_time
+  minutes = current_time.minute
+  seconds = current_time.second
+
+  #print(f"Current Time: {hours}:{minutes}:{seconds}")
 
   # Function to convert time to binary in 4-bit binary format
   def convert_to_binary(num):
