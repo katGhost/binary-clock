@@ -1,10 +1,13 @@
 import os
-import time
 from datetime import datetime
 from flask import Flask, render_template, jsonify
+from flask_cors import CORS
 
 # Libs Configurations
 app = Flask(__name__)
+# Enable CORS for all routes
+CORS(app)
+
 # From the time library
 now = datetime.now();
 
@@ -77,6 +80,6 @@ def bin_time_endpoint():
 
 
 
-
+# Run app in debug mode
 if __name__ == "__main__":
   app.run(debug=True)

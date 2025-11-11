@@ -7,71 +7,61 @@
   <meta name="description" content="A binary clock representing time and date in bits." />
   <meta name="author" content="Your Name" />
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="../static/css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
 </head>
 <body>
 
-  <main id="main">
-    <div class="container">
-      <div class="row g-3">
-        <div class="col"><!--Hours (digit by digit)-->
-          <div class="group hours p-3 bg-primary">
-            <div class="digit">
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-            </div>
-            <div class="digit">
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-            </div>
-          </div>
-          <!--Minutes (digit by digit)-->
-          <div class="group minutes p-3 bg-primary">
-            <div class="digit">
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-            </div>
-            <div class="digit">
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-            </div>
-          </div>
-          <!--Seconds (digit by digit)-->
-          <div class="group seconds p-3 bg-primary">
-            <div class="digit">
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-            </div>
-            <div class="digit">
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-              <div class="bulb"></div>
-            </div>
-          </div>
-        </div>
+  <div class="clock">
+    <!--Hours (digit by digit)-->
+    <div class="group hours">
+      <div class="digit">
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+      </div>
+      <div class="digit">
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
       </div>
     </div>
-  </main>
+    <!--Minutes (digit by digit)-->
+    <div class="group minutes">
+      <div class="digit">
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+      </div>
+      <div class="digit">
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+      </div>
+    </div>
+    <!--Seconds (digit by digit)-->
+    <div class="group seconds">
+      <div class="digit">
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+      </div>
+      <div class="digit">
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+      </div>
+    </div>
+  </div>
 
-  <!--Jquery--> 
-  <script>
-    
-  </script>
-  <!--JS-->
-  
-  <script src="../static/js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!--JS-->  
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 
 </body>
 </html>

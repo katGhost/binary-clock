@@ -1,18 +1,20 @@
+//import axios  from 'axios';
 // Grab the DOM data
-const hourDigits = document.querySelectorAll('.group.hours .digit');
-const minuteDigits = document.querySelectorAll('.group.minutes .digit');
-const secondDigits = document.querySelectorAll('.group.seconds .digit');
+const hourDigits = document.querySelectorAll(".group.hours .digit");
+const minuteDigits = document.querySelectorAll(".group.minutes .digit");
+const secondDigits = document.querySelectorAll(".group.seconds .digit");
 
+//console.log(hourDigits);
 //
 function updateGroup(digits, binaryArray) {
   binaryArray.forEach((binaryString, binIndex) => {
-    const bulbs = digits[binIndex].querySelectorAll('.bulb');
-    for (let j = 0; j < binaryString.axios.length; j++) {
+    const bulbs = digits[binIndex].querySelectorAll(".bulb");
+    for (let j = 0; j < binaryString.length; j++) {
       if (binaryString[j] == '1') {
-        bulbs[j].classList.add('on');
+        bulbs[j].classList.add("on");
       }
       else {
-        bulbs[j].classList.remove('on');
+        bulbs[j].classList.remove("on");
       }
     }
   });
@@ -26,10 +28,9 @@ function updateClock(data) {
 }
 
 function fetchBinaryTime() {
-  axios.get("/binary_time")
-    .then(response => {
-      const data = response.data;
-      
+  fetch('/binary_time')
+    .then(response => response.json())
+    .then( data => {
       updateClock(data);
     })
     .catch(error => {
@@ -37,8 +38,8 @@ function fetchBinaryTime() {
     });
 }
 
-console.log(SetTimeInterval(fetchBinaryTime(), 1000));
-
+setInterval(fetchBinaryTime, 1000);
+fetchBinaryTime();
 
 // fetch the data
 /*fetch('/time')
