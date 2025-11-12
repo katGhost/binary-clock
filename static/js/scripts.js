@@ -27,14 +27,6 @@ function updateClock(data) {
   updateGroup(hourDigits, data.hours);
   updateGroup(minuteDigits, data.minutes)
   updateGroup(secondDigits, data.seconds);
-
-  // change to 12h format
-  if (data.hours > 12)
-  {
-    data.hours -= 12;
-    use12HourFormat = true;
-  }
-  
 }
 
 // Function to fetch api data asynchronously

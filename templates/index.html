@@ -6,58 +6,71 @@
   <title>Binary Clock | Home</title>
   <meta name="description" content="A binary clock representing time and date in bits." />
   <meta name="author" content="Andries" />
-  <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
 </head>
 <body>
 
-  <div class="clock">
-    <!--Hours (digit by digit)-->
-    <div class="group hours">
-      <div class="digit">
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
+  <main>
+    <div class="description">
+      <div class="hour">
+        <p>HH</p>
       </div>
-      <div class="digit">
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
+      <div class="min">
+        <p>MM</p>
+      </div>
+      <div class="sec">
+        <p>SS</p>
       </div>
     </div>
-    <!--Minutes (digit by digit)-->
-    <div class="group minutes">
-      <div class="digit">
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
+    <div class="clock">
+      <!--Hours (digit by digit)-->
+      <div class="group hours">
+        <div class="digit">
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+        </div>
+        <div class="digit">
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+        </div>
       </div>
-      <div class="digit">
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
+      <!--Minutes (digit by digit)-->
+      <div class="group minutes">
+        <div class="digit">
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+        </div>
+        <div class="digit">
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+        </div>
+      </div>
+      <!--Seconds (digit by digit)-->
+      <div class="group seconds">
+        <div class="digit">
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+        </div>
+        <div class="digit">
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+        </div>
       </div>
     </div>
-    <!--Seconds (digit by digit)-->
-    <div class="group seconds">
-      <div class="digit">
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-      </div>
-      <div class="digit">
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-        <div class="bulb"></div>
-      </div>
-    </div>
-  </div>
+  </main>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!--JS-->  
