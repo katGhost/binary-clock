@@ -1,29 +1,22 @@
 body {
-  /*display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #010101;
   height: 100vh;
   width: 100vw;
   margin: 0;
-  color: white;*/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  background: red;
 }
 
 .description {
-  background-color: blue;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -32,8 +25,18 @@ main {
   max-width: 600px;
 }
 
-.hour .min .sec p {
-  font-size: 3.2rem;
+.hour, .min, .sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+} 
+
+p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color:rgb(45, 255, 73)
 }
 
 .clock {
@@ -67,6 +70,26 @@ main {
 .bulb.on {
   background-color: rgb(45, 255, 73);
   box-shadow: 0 0 8px #3bff55, 0 0 16px #3bff55;
+}
+
+@media (max-width: 600px) {
+  .description {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .clock {
+    gap: 30px;
+  }
+
+  .digit {
+    gap: 8px;
+  }
+
+  .bulb {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 
