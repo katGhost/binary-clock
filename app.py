@@ -13,31 +13,6 @@ app = Flask(__name__)
 def index():
   return render_template("index.html")
 
-# Function to get the current time
-# -> decouple the data and return structured data, tuple
-"""
-def get_time():
-  # From the time library
-  now = datetime.now();
-  time_data = now.strftime("%I:%M:%S")
-
-  #unpack the time_data string
-  hours = int(time_data[0:2])
-  minutes = int(time_data[3:5])
-  seconds = int(time_data[6:8])
-
-  return (hours, minutes, seconds)
-
-
-# Function to convert time tuple from get_time to string
-def convert_to_string(nums: tuple[int, int, int]) -> str:
-  hrs = str(nums[0])
-  mins = str(nums[1])
-  secs = str(nums[2])
-  #print(f"{hrs},{mins},{secs}")
-  #time_nums = tuple(int(x) for x in get_time().split(", "))
-  return (f"{hrs}, {mins}, {secs}")
-"""
 
 # Function to get the tuple time information
 # -> decouples the data further and store in a dict
@@ -79,3 +54,30 @@ def bin_time_endpoint():
 # Run app in debug mode
 if __name__ == "__main__":
   app.run(debug=True)
+
+
+# Function to get the current time
+# -> decouple the data and return structured data, tuple
+"""
+def get_time():
+  # From the time library
+  now = datetime.now();
+  time_data = now.strftime("%I:%M:%S")
+
+  #unpack the time_data string
+  hours = int(time_data[0:2])
+  minutes = int(time_data[3:5])
+  seconds = int(time_data[6:8])
+
+  return (hours, minutes, seconds)
+
+
+# Function to convert time tuple from get_time to string
+def convert_to_string(nums: tuple[int, int, int]) -> str:
+  hrs = str(nums[0])
+  mins = str(nums[1])
+  secs = str(nums[2])
+  #print(f"{hrs},{mins},{secs}")
+  #time_nums = tuple(int(x) for x in get_time().split(", "))
+  return (f"{hrs}, {mins}, {secs}")
+"""
