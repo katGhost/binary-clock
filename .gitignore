@@ -8,3 +8,5 @@ yarn.lock
 dist/
 build/
 .env
+__pycache__/
+venv/
