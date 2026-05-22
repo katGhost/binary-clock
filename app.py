@@ -23,14 +23,6 @@ def bin_time_endpoint():
   minutes = current_time.minute
   seconds = current_time.second
 
-  #print(f"Current Time: {hours}:{minutes}:{seconds}")
-
-  # Function to convert time to binary in 4-bit binary format
-  def convert_to_binary(num):
-    return format(num, "04b")
-    #print(f"\n Hours: {hours} \n Minutes: {minutes} \n Seconds: {seconds}")
-    #binary_time = bin(time).replace("0b", "")
-
   # Split each time component into inividual digits formatted as decimals/padded with zeros
   h1, h2 = [x for x in str(hours).zfill(2)]
   m1, m2 =  [x for x in str(minutes).zfill(2)]
@@ -48,7 +40,9 @@ def bin_time_endpoint():
   response.headers["Cache-Control"] = "no-store"
   return response
 
-
+# Function to convert time to binary in 4-bit binary format
+def convert_to_binary(num):
+    return format(num, "04b")
 
 
 # Run app in debug mode
@@ -80,4 +74,8 @@ def convert_to_string(nums: tuple[int, int, int]) -> str:
   #print(f"{hrs},{mins},{secs}")
   #time_nums = tuple(int(x) for x in get_time().split(", "))
   return (f"{hrs}, {mins}, {secs}")
+
+#print(f"Current Time: {hours}:{minutes}:{seconds}")
+#print(f"\n Hours: {hours} \n Minutes: {minutes} \n Seconds: {seconds}")
+#binary_time = bin(time).replace("0b", "")
 """
