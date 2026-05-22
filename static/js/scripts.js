@@ -21,7 +21,7 @@ toggleButton.addEventListener("click", () => {
   if (is24Hour)
   {
     // if time is on 24H (default) No AM/PM display
-    document.getElementById("am-pm").textContent = " ";
+    document.getElementById("am-pm").textContent = "";
   }
   else {
     // if time is in 12H, then display AM/PM
